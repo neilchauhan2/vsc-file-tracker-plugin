@@ -11,14 +11,7 @@ import {
   where,
 } from "firebase/firestore";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCh7XE6hDoqTQF7UhNeSP02jF8XKlOLPqk",
-  authDomain: "vsc-file-tracker-plugin.firebaseapp.com",
-  projectId: "vsc-file-tracker-plugin",
-  storageBucket: "vsc-file-tracker-plugin.firebaseapp.com",
-  messagingSenderId: "838427943995",
-  appId: "1:838427943995:web:6e67f43798bb427adea81e",
-};
+import { firebaseConfig } from "./config";
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
