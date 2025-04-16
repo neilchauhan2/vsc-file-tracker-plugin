@@ -1,0 +1,69 @@
+{
+  "name": "vsc-file-tracker",
+  "displayName": "VSC File Tracker",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "vsc-file-tracker",
+          "title": "VSC File Tracker",
+          "icon": "media/vsc-icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "vsc-file-tracker": [
+        {
+          "id": "vsc-file-tracker",
+          "type": "webview",
+          "name": "VSC File Tracker",
+          "icon": "media/vsc-icon.svg",
+          "contextualTitle": "VSCFileTracker"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "vsc-file-tracker.authenticateUser",
+        "title": "Authenticate User",
+        "category": "VSC File Tracker"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/uuid": "^10.0.0",
+    "@types/vscode": "^1.96.0",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.16.0",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "firebase": "^11.2.0",
+    "uuid": "^11.0.5"
+  }
+}
